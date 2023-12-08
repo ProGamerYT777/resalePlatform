@@ -1,15 +1,17 @@
 package org.resalePlatform.dto;
 
+import java.util.Date;
+
 public class Comment {
 
     private Integer author;
     private String authorImage;
     private String authorFirstName;
-    private Integer createdAt;
+    private Date createdAt;
     private Integer pk;
     private String text;
 
-    public Comment(Integer author, String authorImage, String authorFirstName, Integer createdAt, Integer pk, String text) {
+    public Comment(Integer author, String authorImage, String authorFirstName, Date createdAt, Integer pk, String text) {
         this.author = author;
         this.authorImage = authorImage;
         this.authorFirstName = authorFirstName;
@@ -42,11 +44,11 @@ public class Comment {
         this.authorFirstName = authorFirstName;
     }
 
-    public Integer getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Integer createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

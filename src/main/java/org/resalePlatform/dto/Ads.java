@@ -1,13 +1,11 @@
 package org.resalePlatform.dto;
 
-import java.lang.reflect.Array;
-
 public class Ads {
 
     private Integer count;
-    private Array results;
+    private Ad results;
 
-    public Ads(Integer count, Array results) {
+    public Ads(Integer count, Ad results) {
         this.count = count;
         this.results = results;
     }
@@ -20,11 +18,11 @@ public class Ads {
         this.count = count;
     }
 
-    public Array getResults() {
+    public Ad getResults() {
         return results;
     }
 
-    public void setResults(Array results) {
+    public void setResults(Ad results) {
         this.results = results;
     }
 }
