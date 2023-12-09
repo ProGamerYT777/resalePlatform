@@ -1,11 +1,13 @@
 package org.resalePlatform.dto;
 
+import java.util.List;
+
 public class Comments {
 
     private Integer count;
-    private Comment results;
+    private List<Comment> results;
 
-    public Comments(Integer count, Comment results) {
+    public Comments(Integer count, List<Comment> results) {
         this.count = count;
         this.results = results;
     }
@@ -18,11 +20,11 @@ public class Comments {
         this.count = count;
     }
 
-    public Comment getResults() {
+    public List<Comment> getResults() {
         return results;
     }
 
-    public void setResults(Comment results) {
+    public void setResults(List<Comment> results) {
         this.results = results;
     }
 }

@@ -1,7 +1,8 @@
 package org.resalePlatform.controller;
 
-import com.foreach.openapi.model.Ads;
 import lombok.extern.slf4j.Slf4j;
+import org.resalePlatform.dto.Ad;
+import org.resalePlatform.dto.Ads;
 import org.resalePlatform.service.AdService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @CrossOrigin(value = "http://localhost:3000")
+@RequestMapping("/ads")
 @RestController
 public class AdController {
 
@@ -19,38 +21,38 @@ public class AdController {
         this.adService = adService;
     }
 
-    @GetMapping("/ads")
+    @GetMapping("/")
     public ResponseEntity<Ads> getAllAds() {
         return null;
     }
 
-    @PostMapping(value = "/ads", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Ads> addAd(@RequestBody Ads ad, @RequestParam("image") MultipartFile image) {
+    @PostMapping(value = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Ads> addAd(@RequestBody Ads ad, @RequestPart("image") MultipartFile image) {
         return null;
     }
 
-    @GetMapping("/ads/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Ads> getAds(@PathVariable("id") Integer id) {
         return null;
     }
 
-    @DeleteMapping("/ads/{id}")
-    public ResponseEntity<Ads> removeAd(@PathVariable("id") Integer id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Ad> removeAd(@PathVariable("id") Integer id) {
         return null;
     }
 
-    @PatchMapping("/ads/{id}")
-    public ResponseEntity<Ads> updateAds(@PathVariable("id") Integer id, @RequestBody Ads ad) {
+    @PatchMapping("/{id}")
+    public ResponseEntity<Ad> updateAds(@PathVariable("id") Integer id, @RequestBody Ad ad) {
         return null;
     }
 
-    @GetMapping("/ads/me")
+    @GetMapping("/me")
     public ResponseEntity<Ads> getAdsMe() {
         return null;
     }
 
-    @PatchMapping(value = "/ads/{id}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Ads> updateImage(@RequestParam("image") MultipartFile image, @PathVariable("id") Integer id) {
+    @PatchMapping(value = "/{id}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Ad> updateImage(@RequestPart("image") MultipartFile image, @PathVariable("id") Integer id) {
         return null;
     }
 }

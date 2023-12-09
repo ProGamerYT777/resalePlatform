@@ -2,7 +2,6 @@ package org.resalePlatform.controller;
 
 import com.foreach.openapi.model.User;
 import lombok.extern.slf4j.Slf4j;
-import org.resalePlatform.dto.Login;
 import org.resalePlatform.dto.NewPassword;
 import org.resalePlatform.service.UserService;
 import org.springframework.http.MediaType;
@@ -12,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @CrossOrigin(value = "http://localhost:3000")
+@RequestMapping("/users")
 @RestController
 public class UserController {
 
@@ -21,22 +21,22 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/users/set_password")
+    @PostMapping("/set_password")
     public ResponseEntity<User> setPassword(@RequestBody NewPassword password) {
         return null;
     }
-    @GetMapping("/users/me")
+    @GetMapping("/me")
     public ResponseEntity<User> getUser() {
         return null;
     }
 
-    @PatchMapping("/users/me")
+    @PatchMapping("/me")
     public ResponseEntity<User> updateUser(@RequestBody User user) {
         return null;
     }
 
-    @PatchMapping(value = "/users/me/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<User> updateUserImage(@RequestParam("image") MultipartFile image) {
+    @PatchMapping(value = "/me/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<User> updateUserImage(@RequestPart("image") MultipartFile image) {
         return null;
     }
 }

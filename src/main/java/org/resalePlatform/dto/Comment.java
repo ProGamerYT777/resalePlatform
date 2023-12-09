@@ -7,11 +7,11 @@ public class Comment {
     private Integer author;
     private String authorImage;
     private String authorFirstName;
-    private Date createdAt;
+    private Long createdAt;
     private Integer pk;
     private String text;
 
-    public Comment(Integer author, String authorImage, String authorFirstName, Date createdAt, Integer pk, String text) {
+    public Comment(Integer author, String authorImage, String authorFirstName, Long createdAt, Integer pk, String text) {
         this.author = author;
         this.authorImage = authorImage;
         this.authorFirstName = authorFirstName;
@@ -44,11 +44,11 @@ public class Comment {
         this.authorFirstName = authorFirstName;
     }
 
-    public Date getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 

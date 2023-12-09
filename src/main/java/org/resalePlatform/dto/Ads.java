@@ -1,11 +1,13 @@
 package org.resalePlatform.dto;
 
+import java.util.List;
+
 public class Ads {
 
     private Integer count;
-    private Ad results;
+    private List<Ad> results;
 
-    public Ads(Integer count, Ad results) {
+    public Ads(Integer count, List<Ad> results) {
         this.count = count;
         this.results = results;
     }
@@ -18,11 +20,11 @@ public class Ads {
         this.count = count;
     }
 
-    public Ad getResults() {
+    public List<Ad> getResults() {
         return results;
     }
 
-    public void setResults(Ad results) {
+    public void setResults(List<Ad> results) {
         this.results = results;
     }
 }
