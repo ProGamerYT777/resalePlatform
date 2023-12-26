@@ -5,9 +5,9 @@ import java.util.List;
 public class Ads {
 
     private Integer count;
-    private List<Ad> results;
+    private List<AdDto> results;
 
-    public Ads(Integer count, List<Ad> results) {
+    public Ads(Integer count, List<AdDto> results) {
         this.count = count;
         this.results = results;
     }
@@ -20,11 +20,11 @@ public class Ads {
         this.count = count;
     }
 
-    public List<Ad> getResults() {
+    public List<AdDto> getResults() {
         return results;
     }
 
-    public void setResults(List<Ad> results) {
+    public void setResults(List<AdDto> results) {
         this.results = results;
     }
 }

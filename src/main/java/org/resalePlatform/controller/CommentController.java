@@ -1,8 +1,8 @@
 package org.resalePlatform.controller;
 
-import com.foreach.openapi.model.Comments;
 import lombok.extern.slf4j.Slf4j;
-import org.resalePlatform.dto.Comment;
+import org.resalePlatform.dto.CommentDto;
+import org.resalePlatform.dto.Comments;
 import org.resalePlatform.service.CommentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,21 +21,21 @@ public class CommentController {
 
     @GetMapping("/{id}/comments")
     public ResponseEntity<Comments> getComments(@PathVariable("id") Integer id) {
-        return null;
+        return ResponseEntity.ok(commentService.getComments(id));
     }
 
     @PostMapping("/{id}/comments")
-    public ResponseEntity<Comment> addComment(@PathVariable("id") Integer id, @RequestBody Comment comment) {
-        return null;
+    public ResponseEntity<CommentDto> addComment(@PathVariable("id") Integer id, @RequestBody CommentDto commentDto) {
+        return ResponseEntity.ok(commentService.addComment(id, commentDto));
     }
 
     @DeleteMapping("/{adId}/comments/{commentId}")
-    public ResponseEntity<Comment> deleteComment(@PathVariable("adId") Integer adId, @PathVariable("commentId") Integer commentId) {
-        return null;
+    public ResponseEntity<CommentDto> deleteComment(@PathVariable("adId") Integer adId, @PathVariable("commentId") Integer commentId) {
+        return ResponseEntity.ok(commentService.deleteComment(adId, commentId));
     }
 
     @PatchMapping("/{adId}/comments/{commentId}")
-    public ResponseEntity<Comment> updateComment(@PathVariable("adId") Integer adId, @PathVariable("commentId") Integer commentId, @RequestBody Comments comment) {
-        return null;
+    public ResponseEntity<CommentDto> updateComment(@PathVariable("adId") Integer adId, @PathVariable("commentId") Integer commentId, @RequestBody CommentDto commentDto) {
+        return ResponseEntity.ok(commentService.updateComment(adId, commentId, commentDto));
     }
 }

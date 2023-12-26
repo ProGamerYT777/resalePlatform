@@ -1,6 +1,6 @@
 package org.resalePlatform.dto;
 
-public class User {
+public class UserDto {
 
     private Integer id;
     private String email;
@@ -10,7 +10,7 @@ public class User {
     private Role role;
     private String image;
 
-    public User(Integer id, String email, String firstName, String lastName, String phone, Role role, String image) {
+    public UserDto(Integer id, String email, String firstName, String lastName, String phone, Role role, String image) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;

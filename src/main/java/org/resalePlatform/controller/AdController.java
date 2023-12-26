@@ -1,7 +1,7 @@
 package org.resalePlatform.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.resalePlatform.dto.Ad;
+import org.resalePlatform.dto.AdDto;
 import org.resalePlatform.dto.Ads;
 import org.resalePlatform.service.AdService;
 import org.springframework.http.MediaType;
@@ -23,36 +23,36 @@ public class AdController {
 
     @GetMapping("/")
     public ResponseEntity<Ads> getAllAds() {
-        return null;
+        return ResponseEntity.ok(adService.getAllAds());
     }
 
     @PostMapping(value = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Ads> addAd(@RequestBody Ads ad, @RequestPart("image") MultipartFile image) {
-        return null;
+    public ResponseEntity<Ads> addAd(@RequestPart("properties") Ads ad, @RequestPart("image") MultipartFile image) {
+        return ResponseEntity.ok(adService.addAd(ad, image));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Ads> getAds(@PathVariable("id") Integer id) {
-        return null;
+        return ResponseEntity.ok(adService.getAds(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Ad> removeAd(@PathVariable("id") Integer id) {
-        return null;
+    public ResponseEntity<AdDto> removeAd(@PathVariable("id") Integer id) {
+        return ResponseEntity.ok(adService.removeAd(id));
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Ad> updateAds(@PathVariable("id") Integer id, @RequestBody Ad ad) {
-        return null;
+    public ResponseEntity<AdDto> updateAds(@PathVariable("id") Integer id, @RequestBody AdDto adDto) {
+        return ResponseEntity.ok(adService.updateAds(id, adDto));
     }
 
     @GetMapping("/me")
     public ResponseEntity<Ads> getAdsMe() {
-        return null;
+        return ResponseEntity.ok(adService.getAdsMe());
     }
 
     @PatchMapping(value = "/{id}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Ad> updateImage(@RequestPart("image") MultipartFile image, @PathVariable("id") Integer id) {
-        return null;
+    public ResponseEntity<AdDto> updateImage(@PathVariable("id") Integer id, @RequestPart("image") MultipartFile image) {
+        return ResponseEntity.ok(adService.updateImage(id, image));
     }
 }

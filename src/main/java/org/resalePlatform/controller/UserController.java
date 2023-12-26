@@ -1,8 +1,8 @@
 package org.resalePlatform.controller;
 
-import com.foreach.openapi.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.resalePlatform.dto.NewPassword;
+import org.resalePlatform.dto.UserDto;
 import org.resalePlatform.service.UserService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,21 +22,21 @@ public class UserController {
     }
 
     @PostMapping("/set_password")
-    public ResponseEntity<User> setPassword(@RequestBody NewPassword password) {
-        return null;
+    public ResponseEntity<UserDto> setPassword(@RequestBody NewPassword password) {
+        return ResponseEntity.ok(userService.setPassword(password));
     }
     @GetMapping("/me")
-    public ResponseEntity<User> getUser() {
-        return null;
+    public ResponseEntity<UserDto> getUser() {
+        return ResponseEntity.ok(userService.getUser());
     }
 
     @PatchMapping("/me")
-    public ResponseEntity<User> updateUser(@RequestBody User user) {
-        return null;
+    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
+        return ResponseEntity.ok(userService.updateUser(userDto));
     }
 
     @PatchMapping(value = "/me/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<User> updateUserImage(@RequestPart("image") MultipartFile image) {
-        return null;
+    public ResponseEntity<UserDto> updateUserImage(@RequestPart("image") MultipartFile image) {
+        return ResponseEntity.ok(userService.updateUserImage(image));
     }
 }

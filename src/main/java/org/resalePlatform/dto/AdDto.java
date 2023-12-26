@@ -1,6 +1,6 @@
 package org.resalePlatform.dto;
 
-public class Ad {
+public class AdDto {
 
     private Integer author;
     private String image;
@@ -8,7 +8,7 @@ public class Ad {
     private Integer price;
     private String title;
 
-    public Ad(Integer author, String image, Integer pk, Integer price, String title) {
+    public AdDto(Integer author, String image, Integer pk, Integer price, String title) {
         this.author = author;
         this.image = image;
         this.pk = pk;

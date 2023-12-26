@@ -5,9 +5,9 @@ import java.util.List;
 public class Comments {
 
     private Integer count;
-    private List<Comment> results;
+    private List<CommentDto> results;
 
-    public Comments(Integer count, List<Comment> results) {
+    public Comments(Integer count, List<CommentDto> results) {
         this.count = count;
         this.results = results;
     }
@@ -20,11 +20,11 @@ public class Comments {
         this.count = count;
     }
 
-    public List<Comment> getResults() {
+    public List<CommentDto> getResults() {
         return results;
     }
 
-    public void setResults(List<Comment> results) {
+    public void setResults(List<CommentDto> results) {
         this.results = results;
     }
 }

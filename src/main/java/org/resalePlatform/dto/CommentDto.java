@@ -1,8 +1,7 @@
 package org.resalePlatform.dto;
 
-import java.util.Date;
 
-public class Comment {
+public class CommentDto {
 
     private Integer author;
     private String authorImage;
@@ -11,7 +10,7 @@ public class Comment {
     private Integer pk;
     private String text;
 
-    public Comment(Integer author, String authorImage, String authorFirstName, Long createdAt, Integer pk, String text) {
+    public CommentDto(Integer author, String authorImage, String authorFirstName, Long createdAt, Integer pk, String text) {
         this.author = author;
         this.authorImage = authorImage;
         this.authorFirstName = authorFirstName;
