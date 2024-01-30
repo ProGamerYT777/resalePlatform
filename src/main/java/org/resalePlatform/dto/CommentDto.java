@@ -1,16 +1,20 @@
 package org.resalePlatform.dto;
 
 
+import org.resalePlatform.entity.Ad;
+import org.resalePlatform.entity.Comment;
+import org.resalePlatform.entity.User;
+
 public class CommentDto {
 
-    private Integer author;
+    private User author;
     private String authorImage;
     private String authorFirstName;
     private Long createdAt;
     private Integer pk;
-    private String text;
+    private Ad text;
 
-    public CommentDto(Integer author, String authorImage, String authorFirstName, Long createdAt, Integer pk, String text) {
+    public CommentDto(User author, String authorImage, String authorFirstName, Long createdAt, Integer pk, Ad text) {
         this.author = author;
         this.authorImage = authorImage;
         this.authorFirstName = authorFirstName;
@@ -19,11 +23,34 @@ public class CommentDto {
         this.text = text;
     }
 
-    public Integer getAuthor() {
+    public CommentDto() {
+
+    }
+
+    public static CommentDto fromComment(Comment comment) {
+        CommentDto commentDto = new CommentDto();
+        commentDto.setAuthor(comment.getAuthor());
+        commentDto.setCreatedAt(comment.getCreatedAt());
+        commentDto.setPk(comment.getPk());
+        commentDto.setText(comment.getText());
+        return commentDto;
+    }
+
+    public static Comment toComment(CommentDto commentDto) {
+        Comment comment = new Comment();
+        comment.setAuthor(commentDto.getAuthor());
+        comment.setCreatedAt(commentDto.getCreatedAt());
+        comment.setPk(commentDto.getPk());
+        comment.setText(commentDto.getText());
+        return comment;
+    }
+
+
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(Integer author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
@@ -59,11 +86,23 @@ public class CommentDto {
         this.pk = pk;
     }
 
-    public String getText() {
+    public Ad getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(Ad text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return "CommentDto{" +
+                "author=" + author +
+                ", authorImage='" + authorImage + '\'' +
+                ", authorFirstName='" + authorFirstName + '\'' +
+                ", createdAt=" + createdAt +
+                ", pk=" + pk +
+                ", text=" + text +
+                '}';
     }
 }

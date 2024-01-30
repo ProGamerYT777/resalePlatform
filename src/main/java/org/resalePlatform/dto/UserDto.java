@@ -1,5 +1,7 @@
 package org.resalePlatform.dto;
 
+import org.resalePlatform.entity.User;
+
 public class UserDto {
 
     private Integer id;
@@ -19,6 +21,35 @@ public class UserDto {
         this.role = role;
         this.image = image;
     }
+
+    public UserDto() {
+
+    }
+
+    public static UserDto fromUser(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setEmail(user.getEmail());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setPhone(user.getPhone());
+        userDto.setRole(user.getRole());
+        userDto.setImage(user.getImage());
+        return userDto;
+    }
+
+    public static User toUser(UserDto userDto) {
+        User user = new User();
+        user.setId(userDto.getId());
+        user.setEmail(userDto.getEmail());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setPhone(userDto.getPhone());
+        user.setRole(userDto.getRole());
+        user.setImage(userDto.getImage());
+        return user;
+    }
+
 
     public Integer getId() {
         return id;
@@ -74,5 +105,18 @@ public class UserDto {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", role=" + role +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

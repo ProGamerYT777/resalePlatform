@@ -27,12 +27,12 @@ public class AdController {
     }
 
     @PostMapping(value = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Ads> addAd(@RequestPart("properties") Ads ad, @RequestPart("image") MultipartFile image) {
-        return ResponseEntity.ok(adService.addAd(ad, image));
+    public ResponseEntity<AdDto> addAd(@RequestPart("properties") AdDto adDto, @RequestPart("image") MultipartFile image) {
+        return ResponseEntity.ok(adService.addAd(adDto, image));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Ads> getAds(@PathVariable("id") Integer id) {
+    public ResponseEntity<AdDto> getAds(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(adService.getAds(id));
     }
 

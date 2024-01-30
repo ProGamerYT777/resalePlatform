@@ -8,9 +8,9 @@ public interface AdService {
 
     Ads getAllAds();
 
-    Ads addAd(Ads ad, MultipartFile image);
+    AdDto addAd(AdDto adDto, MultipartFile image);
 
-    Ads getAds(Integer id);
+    AdDto getAds(Integer id);
 
     AdDto removeAd(Integer id);
 

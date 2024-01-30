@@ -16,7 +16,7 @@ import java.util.Objects;
 @Entity
 public class Ad {
     @Column(nullable = false)
-    private Integer author;
+    private User author;
     @Column(nullable = false)
     private String image;
     @Id
@@ -26,6 +26,46 @@ public class Ad {
     private Integer price;
     @Column(nullable = false)
     private String title;
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Integer getPk() {
+        return pk;
+    }
+
+    public void setPk(Integer pk) {
+        this.pk = pk;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     @Override
     public final boolean equals(Object o) {

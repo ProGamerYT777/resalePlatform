@@ -16,18 +16,46 @@ import java.util.Objects;
 @Entity
 public class Comment {
     @Column(nullable = false)
-    private Integer author;
-    @Column(nullable = false)
-    private String authorImage;
-    @Column(nullable = false)
-    private String authorFirstName;
+    private User author;
     @Column(nullable = false)
     private Long createdAt;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer pk;
     @Column(nullable = false)
-    private String text;
+    private Ad text;
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getPk() {
+        return pk;
+    }
+
+    public void setPk(Integer pk) {
+        this.pk = pk;
+    }
+
+    public Ad getText() {
+        return text;
+    }
+
+    public void setText(Ad text) {
+        this.text = text;
+    }
 
     @Override
     public final boolean equals(Object o) {

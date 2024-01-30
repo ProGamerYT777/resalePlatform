@@ -26,12 +26,12 @@ public class AdServiceImpl implements AdService {
     }
 
     @Override
-    public Ads addAd(Ads ad, MultipartFile image) {
+    public AdDto addAd(AdDto adDto, MultipartFile image) {
         return null;
     }
 
     @Override
-    public Ads getAds(Integer id) {
+    public AdDto getAds(Integer id) {
         return null;
     }
 
