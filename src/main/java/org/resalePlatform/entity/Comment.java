@@ -15,21 +15,23 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 public class Comment {
-    @Column(nullable = false)
-    private User author;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Integer author;
     @Column(nullable = false)
     private Long createdAt;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer pk;
-    @Column(nullable = false)
-    private Ad text;
+    @ManyToOne
+    @JoinColumn(name = "ad_pk", nullable = false)
+    private String text;
 
-    public User getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 
@@ -49,11 +51,11 @@ public class Comment {
         this.pk = pk;
     }
 
-    public Ad getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(Ad text) {
+    public void setText(String text) {
         this.text = text;
     }
 

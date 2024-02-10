@@ -1,20 +1,17 @@
 package org.resalePlatform.dto;
 
-
-import org.resalePlatform.entity.Ad;
 import org.resalePlatform.entity.Comment;
-import org.resalePlatform.entity.User;
 
 public class CommentDto {
 
-    private User author;
+    private Integer author;
     private String authorImage;
     private String authorFirstName;
     private Long createdAt;
     private Integer pk;
-    private Ad text;
+    private String text;
 
-    public CommentDto(User author, String authorImage, String authorFirstName, Long createdAt, Integer pk, Ad text) {
+    public CommentDto(Integer author, String authorImage, String authorFirstName, Long createdAt, Integer pk, String text) {
         this.author = author;
         this.authorImage = authorImage;
         this.authorFirstName = authorFirstName;
@@ -46,11 +43,11 @@ public class CommentDto {
     }
 
 
-    public User getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 
@@ -86,11 +83,11 @@ public class CommentDto {
         this.pk = pk;
     }
 
-    public Ad getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(Ad text) {
+    public void setText(String text) {
         this.text = text;
     }
 

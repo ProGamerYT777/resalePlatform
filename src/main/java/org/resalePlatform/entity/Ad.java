@@ -15,8 +15,9 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 public class Ad {
-    @Column(nullable = false)
-    private User author;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private Integer author;
     @Column(nullable = false)
     private String image;
     @Id
@@ -27,11 +28,11 @@ public class Ad {
     @Column(nullable = false)
     private String title;
 
-    public User getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 

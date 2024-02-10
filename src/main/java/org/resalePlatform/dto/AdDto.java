@@ -1,17 +1,16 @@
 package org.resalePlatform.dto;
 
 import org.resalePlatform.entity.Ad;
-import org.resalePlatform.entity.User;
 
 public class AdDto {
 
-    private User author;
+    private Integer author;
     private String image;
     private Integer pk;
     private Integer price;
     private String title;
 
-    public AdDto(User author, String image, Integer pk, Integer price, String title) {
+    public AdDto(Integer author, String image, Integer pk, Integer price, String title) {
         this.author = author;
         this.image = image;
         this.pk = pk;
@@ -43,11 +42,11 @@ public class AdDto {
         return ad;
     }
 
-    public User getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 
